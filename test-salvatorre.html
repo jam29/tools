@@ -1,0 +1,76 @@
+<html>
+<head>
+<style type="text/css">
+
+	#grid[data-columns]::before {
+		content: '3 .column.size-1of3';
+	}
+
+	/* These are the classes that are going to be applied: */
+	.column { float: left; }
+	.size-1of1 { width: 100%; }
+	.size-1of2 { width: 50%; }
+	.size-1of3 { width: 33.333%; }
+
+@media screen and (max-width: 480px){
+    #grid[data-columns]::before {
+            content: '1 .column.size-1of1';
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    #grid[data-columns]::before {
+            content: '2 .column.size-1of2';
+    }
+}
+
+@media screen and (min-width: 769px) {
+    #grid[data-columns]::before {
+            content: '3 .column.size-1of3';
+    }
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div id="grid" data-columns >
+	<div>Item #1</div>
+	<div>Item #2</div>
+	<div>Item #3</div>
+	<div>Item #4</div>
+	<div>Item #5</div>
+	<div>Item #6</div>
+	<div>Item #7</div>
+	<div>Item #8</div>
+	<div>Item #9</div>
+	<div>Item #10</div>
+	<div>Item #11</div>
+	<div>Item #12</div>
+	<div>Item #13</div>
+	<div>Item #14</div>
+	<div>Item #15</div>
+	<div>Item #16</div>
+	<div>Item #17</div>
+	<div>Item #18</div>
+	<div>Item #19</div>
+	<div>Item #20</div>
+	<div>Item #21</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="salvattore.js"></script>
+<script>
+$(document).ready(function() {
+var grid = document.querySelector('#grid');
+var item = document.createElement('div');
+
+ salvattore.appendElements(grid, [item]);
+ item.outerHTML = '<div>Item #22</div>';
+})
+</script>
+</body>
+</html>
